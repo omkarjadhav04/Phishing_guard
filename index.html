@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>PhishGuard - Phishing Link & Email Checker</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="PhishGuard home">
+      <span class="brand-mark" aria-hidden="true">P</span>
+      <span>Phish<span class="brand-accent">Guard</span></span>
+    </a>
+    <span class="privacy-note"><span class="privacy-dot"></span> Private, browser-based checks</span>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> THINK BEFORE YOU CLICK</p>
+        <h1 id="page-title">A safer inbox<br>starts <span>with a check.</span></h1>
+        <p class="hero-description">Spot common warning signs in a suspicious link or email before you open it. Your text stays on this device.</p>
+        <div class="hero-points">
+          <span><span class="check-mark">✓</span> No account needed</span>
+          <span><span class="check-mark">✓</span> Your text is not uploaded</span>
+        </div>
+      </div>
+
+      <section class="checker-card" aria-labelledby="checker-title">
+        <div class="card-heading">
+          <div>
+            <p class="card-kicker">QUICK SECURITY CHECK</p>
+            <h2 id="checker-title">What would you like to check?</h2>
+          </div>
+          <span class="shield-icon" aria-hidden="true">✓</span>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Content type">
+          <button class="tab is-active" id="url-tab" type="button" role="tab" aria-selected="true" aria-controls="checker-panel" data-mode="url">Website URL</button>
+          <button class="tab" id="email-tab" type="button" role="tab" aria-selected="false" aria-controls="checker-panel" data-mode="email">Email message</button>
+        </div>
+
+        <div id="checker-panel" role="tabpanel" aria-labelledby="url-tab">
+          <form id="checker-form">
+            <label id="input-label" for="message-input">Paste a website address to check</label>
+            <textarea id="message-input" name="message" rows="4" required spellcheck="false" placeholder="https://example.com/sign-in"></textarea>
+            <p class="input-hint" id="input-hint">You can paste a full link, even if it does not start with https://.</p>
+            <button class="submit-button" type="submit">
+              <span>Check for warning signs</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+
+        <section id="result" class="result" aria-live="polite" aria-atomic="true" hidden>
+          <div class="result-top">
+            <div>
+              <p class="result-label">CHECK COMPLETE</p>
+              <h3 id="result-title"></h3>
+            </div>
+            <div class="score" aria-label="Risk score">
+              <strong id="score-value">0</strong>
+              <span>/ 100</span>
+            </div>
+          </div>
+          <div class="score-track" aria-hidden="true"><span id="score-bar"></span></div>
+          <p id="result-summary" class="result-summary"></p>
+          <h4 class="findings-heading">What we noticed</h4>
+          <ul id="findings-list" class="findings-list"></ul>
+          <p class="disclaimer">This check looks for common clues, not every possible threat. A low score does not guarantee that a link or email is safe.</p>
+        </section>
+      </section>
+    </section>
+
+    <section class="how-section" aria-labelledby="how-title">
+      <div class="section-heading">
+        <p class="eyebrow"><span></span> STAY ONE STEP AHEAD</p>
+        <h2 id="how-title">Small clues can make a big difference.</h2>
+        <p>Phishing messages often use familiar tricks to earn your trust or rush you into a decision.</p>
+      </div>
+      <div class="tip-grid">
+        <article class="tip-card">
+          <span class="tip-number">01</span>
+          <h3>Check the real address</h3>
+          <p>Look for misspellings, unusual domains, and links that do not match the organization.</p>
+        </article>
+        <article class="tip-card">
+          <span class="tip-number">02</span>
+          <h3>Be wary of urgency</h3>
+          <p>Unexpected threats, prizes, and urgent requests are common ways to pressure you.</p>
+        </article>
+        <article class="tip-card">
+          <span class="tip-number">03</span>
+          <h3>Never share secrets</h3>
+          <p>Do not share passwords, verification codes, or payment details through an unexpected link.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>PhishGuard</span>
+    <span>A learning project for safer browsing.</span>
+  </footer>
+</body>
+</html>
